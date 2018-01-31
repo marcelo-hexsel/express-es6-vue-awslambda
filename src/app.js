@@ -5,7 +5,6 @@ import morgan from "morgan";
 import bodyParser from "body-parser";
 import config from "./config.json";
 import expressVue from "express-vue";
-import path from "path";
 
 let app = express();
 app.server = http.createServer(app);
@@ -30,7 +29,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 const vueOptions = {
-  rootPath: path.join(__dirname, "views"),
+  rootPath: "./views",
   layout: {
     start: '<div id="app">',
     end: "</div>"
@@ -49,9 +48,14 @@ const expressVueMiddleware = expressVue.init(vueOptions);
 app.use(expressVueMiddleware);
 
 //route to view
+app.get("/", (req, res) => {
+  res.send("it works!");
+});
+
+//route to view
 app.get("/vue-test", (req, res) => {
   const data = {
-    otherData: "Something Else"
+    otherData: "This was rendered by vuejs"
   };
   const vueOptions = {
     head: {
@@ -63,11 +67,6 @@ app.get("/vue-test", (req, res) => {
     }
   };
   res.renderVue("Test", data, vueOptions);
-});
-
-//starts vue server
-app.server.listen(process.env.PORT || config.port, () => {
-  console.log(`Started on port ${app.server.address().port}`);
 });
 
 export default app;
