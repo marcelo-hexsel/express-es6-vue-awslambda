@@ -1,4 +1,4 @@
-# express-es6-vue
+# express-es6-vue-awslambda
 Express + ES6 + Vuejs + AWS Lambda Serverless template
 
 # Installation
