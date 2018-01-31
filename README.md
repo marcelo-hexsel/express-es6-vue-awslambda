@@ -1,5 +1,5 @@
 # express-es6-vue
-Express + ES6 + Vuejs template
+Express + ES6 + Vuejs + AWS Lambda Serverless template
 
 # Installation
 1.Python instalation (https://www.python.org/downloads/);
