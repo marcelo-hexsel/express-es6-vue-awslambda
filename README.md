@@ -14,7 +14,7 @@ pip install awscli --upgrade --user
 
 4.AWS account configuration (configure your aws account on the client after - https://docs.aws.amazon.com/pt_br/cli/latest/userguide/cli-chap-getting-started.html): 
 ```
-npm run config -- --account-id="291864835109" --bucket-name="mhexsel-aws-lambda-express" --function-name="test"
+npm run config -- --account-id="YOUR_ACCOUNT_ID_HERE" --bucket-name="YOUR_BUCKET_NAME_HERE" --function-name="test"
 ```
 
 5.Running the sample:
